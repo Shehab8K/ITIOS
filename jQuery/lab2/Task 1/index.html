@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="./src/main.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+  <script src="./jquery-ui-1.13.2.custom/jquery-ui.min.js"></script>
+  <title>To Do List</title>
+</head>
+
+<body>
+  <div class="box" id="heading">
+    <h1>ToDo List</h1>
+  </div>
+
+  <div class="box">
+
+        <form action="/" method="post"  id="myMainContainer">
+          <div class="item">
+            <p>Hello This to do list uses local storage to retrieve data back also with check or not ps: you need internet to load delete icon</p>
+            <i class="fa-solid fa-check fa-lg"></i> <!--both icons have style + position -->
+            <i class="fa-solid fa-trash fa-lg"></i>
+          </div>
+
+          <input type="hidden" name="listName" value=""/>
+        </form>
+
+
+      <form class="item" action="/index.html" method="post">
+        <input id="userInput" type="text" name="newItem" placeholder="New Item" value="" autocomplete="off">
+        <button type="button">+</button>
+      </form>
+  </div>
+
+
+  <script src="https://kit.fontawesome.com/212d832ea4.js" crossorigin="anonymous"></script>
+  
+<script src="./src/script.js"></script>
+</body>
+<footer>
+      <span>Made by Shehab</span>
+</footer>
+</html>

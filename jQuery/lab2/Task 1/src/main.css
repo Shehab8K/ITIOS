@@ -1,0 +1,94 @@
+html {
+    background-image: linear-gradient(to left bottom, #F1DBBF 50% , #AA5656 50%);
+    background-attachment: fixed;
+    font-family: 'helvetica neue';
+  }
+  
+  h1 {
+    color: white;
+    padding: 10px;
+  }
+  
+  .box {
+    max-width: 400px;
+    margin: 50px auto;
+    background: white;
+  }
+  
+  #heading {
+    background-color: #AA5656;
+    text-align: center;
+  }
+  
+  .item {
+    position: relative;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+  
+  }
+  
+  input:checked+p {
+    text-decoration: line-through;
+    text-decoration-color: #AA5656;
+  }
+  
+  input[type="checkbox"] {
+    margin: 20px;
+  }
+  
+  p {
+    max-width: 14em;
+    margin: 0.2em;
+    padding: 1em;
+    font-size: 1.3em;
+    font-weight: 400;
+    overflow-wrap: break-word;
+  }
+  
+  form.item {
+    margin-left: 20px;
+  }
+  
+  button {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border-color: transparent;
+    background-color: #AA5656;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  
+  input[type="text"] {
+    text-align: center;
+    height: 2.5em;
+    border: none;
+    font-size: 20px;
+    font-weight: 200;
+    width: 16em;
+  }
+  
+  input[type="text"]:focus {
+    outline: none;
+    border-bottom: 3px solid #AA5656;
+  }
+  
+  footer {
+    margin-top: 8%;  
+    font-weight: bold;
+    color: white;
+    text-align: center;
+  }
+  .fa-trash{
+    position: absolute;
+    right: 5%;
+    cursor: pointer;
+  }
+  .fa-check{
+    position: absolute;
+    right: 15%;
+    cursor: pointer;
+  }
