@@ -4,8 +4,8 @@ ITI stands for Information Technology Institute it is one of the leading institu
 <h3>Short Links</h3>
 <ul>
  <li><a href="https://github.com/Shehab8K/ITIOS#contact"><b>Contact Me</b></a></li>
- <li><a href="https://github.com/Shehab8K/ITIOS#contact"><b>Projects</b></a></li>
- <li><a href="https://github.com/Shehab8K/ITIOS#contact"><b>Labs</b></a></li>
+ <li><a href="https://github.com/Shehab8K/ITIOS/tree/main/projects"><b>Projects</b></a></li>
+ <li><a href="https://github.com/Shehab8K/ITIOS/tree/main/labs"><b>Labs</b></a></li>
 </ul>
 
 ##  <h2>🎯 Mission is to learn Full-stack development using open-source technologies and tools</h2>
