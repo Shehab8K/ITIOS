@@ -1,6 +1,6 @@
 # <h1>Information Technology Institute</h1>
 This repository is  for labs, assignments and projects made during <a href="https://www.iti.gov.eg/iti/home"><b>ITI</b></a> open source 9 month internship,
-ITI stands for Information Technology Institute it is one of the leading institutes, that instructed thousands of developers in different fields including my field <b>Open Source</b><br>
+ITI stands for Information Technology Institute it is one of the leading institutes in Egypt, that instructed thousands of developers in different fields including my field <b>Open Source</b><br>
 <h3>Short Links</h3>
 <ul>
  <li><a href="https://github.com/Shehab8K/ITIOS#contact"><b>Contact Me</b></a></li>
@@ -29,7 +29,7 @@ ITI stands for Information Technology Institute it is one of the leading institu
 - RedHat I
 - Responsive Web Design
 
-## <h3>⭐ I'm really enjoying this learning journey full of excitement to apply what I've learned</h3>
+## <h3>⭐ I'm really enjoying this learning journey & full of excitement to apply what I've learned</h3>
 
 <h4 id="contact"> 🤝🏻 Connect with Me </h4>
 
