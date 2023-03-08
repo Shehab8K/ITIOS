@@ -1,0 +1,135 @@
+<style>
+  body{
+    display: flex;
+    padding: 0 35px;
+    align-items: center;
+    justify-content: center;
+    background: #567189;
+  }
+  .wrapper{
+    display: flex;
+    max-width: 1200px;
+    position: relative;
+  }
+  .wrapper i{
+    top: 50%;
+    height: 44px;
+    width: 44px;
+    color: #567189;
+    cursor: pointer;
+    position: absolute;
+    text-align: center;
+    line-height: 44px;
+    background: white;
+    border-radius: 50%;
+  }
+  
+  i:hover{
+    background: lightgray;
+  }
+  i:first-child{
+    left: -22px;
+  }
+  i:last-child{
+    right: -22px;
+  }
+  .carousel{
+    overflow: hidden;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+  }
+  img{
+    height: 340px;
+    object-fit: cover;
+    margin-left: 14px;
+    width: calc(100% / 3);
+  }
+  img:first-child{
+    margin-left: 0px;
+  }
+  </style>
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title>Task 1</title>
+    </head>
+    <body>
+      <div class="wrapper">
+        <i id="left" class="fa-solid fa-angle-left fa-lg"></i>
+        <div class="carousel">
+          <img src="images/img-1.png" alt="img1">
+          <img src="images/img-2.png" alt="img2">
+          <img src="images/img-3.png" alt="img3">
+          <img src="images/img-4.png" alt="img4">
+          <img src="images/img-5.png" alt="img5">
+          <img src="images/img-6.png" alt="img6">
+        </div>
+        <i id="right" class="fa-solid fa-angle-right fa-lg"></i>
+      </div>
+    
+      <script src="https://kit.fontawesome.com/212d832ea4.js" crossorigin="anonymous"></script>
+  
+      <script>
+          const carousel = document.querySelector(".carousel");
+          const Imgs = carousel.querySelectorAll("img");
+          const firstImg = Imgs[0];
+          const myBtns = document.querySelectorAll(".wrapper i");
+  
+
+
+          myBtns.forEach(btn => {
+          btn.addEventListener("click", () => {
+                let currImgWidth = firstImg.clientWidth + 14;
+                console.log(currImgWidth);
+                console.log(carousel.clientWidth);
+
+                if(btn.id == "left"){
+                    carousel.scrollLeft -= currImgWidth;
+                }else{
+                    carousel.scrollLeft += currImgWidth;
+                    console.log(carousel.scrollLeft);
+                    if(carousel.scrollLeft>carousel.clientWidth)
+                    {
+                        carousel.scrollLeft = 0
+                    }                 
+                }
+            });
+          });
+
+
+        //   myBtns.forEach(btn => {
+        //   btn.addEventListener("click", () => {
+        //         let prevImg = 0;
+        //         let currImg = 1;
+        //         let nextImg = 2;
+
+        //         if(btn.id == "right"){
+        //             prevImg++
+        //             switch(true)
+        //             {
+        //                 case prevImg<(Imgs.length+2): 
+        //                 currImg++;
+        //                 nextImg++;
+        //                 break;
+
+        //                 case prevImg<(Imgs.length+1):
+        //                 currImg++;
+        //                 nextImg = 0;
+        //                 break;
+
+        //                 case prevImg = Imgs.length:
+        //                 currImg = 0;
+        //                 nextImg = 1;
+        //                 break;
+        //             }
+                  
+        //         }
+        //     });
+        //   });
+
+
+
+      </script>
+    </body>
+  </html>

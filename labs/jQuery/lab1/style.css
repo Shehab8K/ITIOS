@@ -1,0 +1,68 @@
+#mybtn{
+    display: flex;
+    justify-content: center;
+}
+.carousel{
+    display: flex;
+    justify-content: center;
+}
+#stop{
+    line-height: 1.5em;
+    width: 8em;
+    background-color: red;
+    border-radius: 10px;
+    color: white;
+}
+.carousel>img{
+    width: 30em;
+    height: 15em;
+    object-fit: contain;
+    margin: 10px;
+}
+section {
+    margin: 40px 0 60px;
+}
+
+section:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+section#points-of-sale ul {
+    list-style-type: none;
+}
+
+
+#points-of-sale li {
+    float: left;
+    width: 32%;
+}
+
+#points-of-sale li:nth-child(2) {
+    margin: 0 2%;
+}
+
+#points-of-sale li h3 {
+    width: 80%;
+    text-align: center;
+    color: #888;
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+#points-of-sale p {
+    text-align: center;
+    width: 60%;
+    margin: 0 10%;
+    font-size: 14px;
+    color: #888;
+    line-height: 1.4em;
+}
+li>img{
+    margin-left: 5em;
+    width: 50%;
+    height: 10em;
+    object-fit: cover;
+}

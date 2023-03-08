@@ -1,0 +1,20 @@
+#bg
+{
+    -fx-fill: linear-gradient(black 0%, white 50%, black 100%);
+}
+#text
+{
+    -fx-font-size: 30;
+    -fx-font-weight: bold;
+    -fx-fill: red;
+}
+
+#textref
+{
+    -fx-font-size: 30;
+    -fx-font-weight: bold;
+    -fx-fill: red;
+    -fx-translate-y: 40;
+    -fx-scale-y: -1;
+    -fx-opacity: 0.3;
+}

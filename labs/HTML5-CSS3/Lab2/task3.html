@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>web worker</title>
+</head>
+
+<body>
+
+    <canvas width="600" height="600" style="border:1px solid black" id="myCanvas"></canvas>
+    <button type="submit" id="check">Check</button>
+
+
+    <script>
+
+var worker1 = new Worker("worker1.js");
+      //  var worker2 = new Worker("worker2.js");
+        var check = document.getElementById("check");
+
+        check.onclick = function(){
+
+            worker1.postMessage("");
+        }
+
+        worker1.onmessage = function (message) {
+            console.log(message);
+            alert(message.data);
+        };
+
+        var can = document.getElementById("myCanvas");
+        var ctx = can.getContext("2d");
+        var myX = 0;
+        var y = 0;
+
+        var myInt = setInterval(function(){
+            y += 100;
+
+            ctx.beginPath();
+            ctx.moveTo(0,0);
+            ctx.lineTo(y,y);
+            ctx.strokeStyle = "red";
+            ctx.stroke();
+            ctx.closePath();
+
+            if(y > 600)
+            {
+                // alert("End Animation");
+                clearInterval(myInt);
+            }
+        },1000);
+
+
+                // check.addEventListener("click", function () {
+        //     worker1.postMessage("");
+        //     worker2.postMessage("");
+        // });
+        
+        // worker 1
+
+                // worker 2
+        // worker2.onmessage = function (message) {
+        //     console.log(message);
+        //     alert(message.data);
+        // };
+
+    </script>
+</body>
+
+</html>

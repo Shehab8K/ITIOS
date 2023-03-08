@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>title</title>
+</head>
+<body>
+    <canvas width="600" height="600" style="border:1px solid black" id="myCanvas"></canvas>
+    <script>
+        var can = document.getElementById("myCanvas");
+        var ctx = can.getContext("2d");
+        var myX = 0;
+        var y = 0;
+
+        var myInt = setInterval(function(){
+            y += 50;
+
+            ctx.beginPath();
+            ctx.moveTo(0,0);
+            ctx.lineTo(y,y);
+            ctx.strokeStyle = "red";
+            ctx.stroke();
+            ctx.closePath();
+
+            if(y > 600)
+            {
+                alert("End Animation");
+                clearInterval(myInt);
+            }
+        },1000);
+
+    </script>
+</body>
+</html>

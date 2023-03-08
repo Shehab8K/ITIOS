@@ -1,0 +1,234 @@
+<style>
+    body
+    {
+        background-color: #dae3e7;
+    }
+    #container
+    {
+        background-color: #f3f3f3;
+        min-width: 25em;
+        width: 25em;
+        margin: 0 auto;
+        border-radius: 5px;
+        padding: 2em;
+    }
+    #time
+    {
+        font-family:'digital-clock-font';
+        margin: 0 auto;
+        height: 5em;
+        width: 25em;
+        background-color: #dddddd;
+        text-align: center;
+        padding-top: 0.5em;
+    }
+    #clock
+    {
+        padding: 0.5em;
+    }
+    span
+    {
+        color: #c2c2c2;
+    }
+    .selected
+    {
+        color: black;
+    }
+    .myBtn
+    {
+        margin-bottom: 1em;
+    }
+    input
+    {
+        width: 5em;
+    }
+    form
+    {
+        text-align: center;
+        margin-top: 1em;
+    }
+    .hide
+    {
+        display: none;
+    }
+    #timememory
+    {
+        text-align: center;
+        margin-bottom: 1em;
+    }
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task2</title>
+</head>
+<body>
+    <div id="container">
+        <div id="timeMemory" class="hide"></div>
+        <div id="time">
+            <span id="mon">Mon</span>
+            <span id="tue">Tue</span>
+            <span id="wed">Wed</span>
+            <span id="thu">Thu</span>
+            <span id="fri">Fri</span>
+            <span id="sat">Sat</span>
+            <span id="sun">Sun</span>
+            <div id="clock" onload="clock()" ></div>
+            <button type="submit" onclick="showAlarm()" class="myBtn">Set Alarm</button>
+        </div>
+        <form id="setalarm" class="hide" onsubmit="stop(event)">
+            <div>Set alarm After</div><br/>
+            <input type="number" placeholder="Hours" id="alarmHours"/>
+            <input type="number" placeholder="Minutes" id="alarmMins"/>
+            <input type="number" placeholder="Seconds" id="alarmSecs"/><br/><br/>
+            <button type="submit" class="myBtn" onclick="setalarm()">Set</button>
+            <button type="reset" class="myBtn">Clear</button>
+        </form>
+    </div>
+    <script>
+
+        let formHidden = true;
+        let currenttime = "";
+        let settedtime = "";
+        let timeleft = 0;
+        let totalsettedtime = 0;
+        let totalcurrenttime = 0;
+        let alarmSound = new Audio("./AlarmClockRingingshehab.m4a");
+        let mytime = null;
+        setInterval(clock, 1000);
+
+        function stop(e)
+        {
+            e.preventDefault();
+        }
+
+        function clock()
+        {
+            let period = "AM";
+            let date = new Date();
+            let today = date.toLocaleString("default", { weekday: "long" });
+            let hour = date.getHours();
+            let min = date.getMinutes();
+            let sec = date.getSeconds();
+
+            if (hour >= 12)
+            {
+                hour -= 12;
+                period = "PM";
+            }
+            else
+            {
+                period = "AM";
+            }
+
+            switch(today)
+            {
+                case "Monday":
+                document.getElementById("mon").classList.add("selected");
+                break;
+
+                case "Tuesday":
+                document.getElementById("tue").classList.add("selected");
+                break;
+
+                case "Wednesday":
+                document.getElementById("wed").classList.add("selected");
+                break;
+
+                case "Thursday":
+                document.getElementById("thu").classList.add("selected");
+                break;
+
+                case "Friday":
+                document.getElementById("fri").classList.add("selected");
+                break;
+
+                case "Saturday":
+                document.getElementById("sat").classList.add("selected");
+                break;
+
+                case "Sunday":
+                document.getElementById("sun").classList.add("selected");
+                break;
+            }
+                totalcurrenttime = hour*60*60+min*60+sec;
+            
+                if(sec<10){
+                    sec = "0"+sec;
+                }
+            console.log("total current time = " + totalcurrenttime)
+            currenttime = hour + ":" + min + ":" + sec + " "+ period;
+            document.getElementById("clock").innerHTML = currenttime;
+        }
+       
+        function showAlarm ()
+        {
+            if(formHidden)
+            {
+            document.getElementById("setalarm").classList.remove("hide");
+            formHidden = false;
+            }
+            else
+            {
+            document.getElementById("setalarm").classList.add("hide");
+            formHidden = true;
+            }
+        }
+    
+        function setalarm(){
+            let period = "AM";
+            let date = new Date();
+            let today = date.toLocaleString("default", { weekday: "long" });
+            let hour = date.getHours();
+            let min = date.getMinutes();
+            let sec = date.getSeconds();
+            
+            addedHours = document.getElementById("alarmHours");
+            addedMins = document.getElementById("alarmMins");
+            addedSecs = document.getElementById("alarmSecs");
+            sethours = hour + Number(addedHours.value);
+            setmins = min + Number(addedMins.value);
+            setsecs = sec + Number(addedSecs.value);
+
+            if (sethours >= 12)
+            {
+                sethours -= 12;
+                period = "PM";
+            }
+            else
+            {
+                period = "AM";
+            }
+
+            settedtime =  sethours + ":" + setmins + ":" + setsecs + " "+ period;
+            totalsettedtime= sethours*60*60+setmins*60+setsecs;
+             console.log("Total Setteled time "+totalsettedtime);
+            document.getElementById("timeMemory").classList.remove("hide");
+            startTimer();
+        } 
+        function startTimer()
+        { 
+            timeleft = totalsettedtime-totalcurrenttime;
+         	 mytime = setInterval(countTimer, 1000);   
+        }
+        function countTimer() 
+        {
+            if( totalsettedtime == totalcurrenttime)
+            {
+                alarmSound.play();
+                document.getElementById("timeMemory").classList.add("hide");
+                clearInterval(mytime);
+            }
+            else
+            {
+            timeleft -= 1;
+            hour = timeleft/(60*60);
+            min = (timeleft/60);
+            second = timeleft%60;
+            document.getElementById("timeMemory").innerHTML = Math.floor(hour)+ ":"+ Math.floor(min)+ ":"+ second;
+            }
+        }
+    </script>
+</body>
+</html>

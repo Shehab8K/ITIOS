@@ -1,0 +1,210 @@
+<style>
+    #allCont{
+        position: relative;
+        width: 800px;
+    }
+    #vid-controls{
+        position: absolute;
+        bottom: 0.01%;
+        z-index: 5;
+        background-color: transparent;
+        opacity: 0; 
+        transition-duration: 3s;
+    }
+
+    /* all elements !!!!!!!!! */
+    #vid-controls *{
+        margin-right: 10px;
+    }
+    /* !!!!!!!!!!!!!!!!!!!!!! */
+    #vidRange{
+        width: 790px;
+    }
+    .rightPart{
+        float: right;
+    }
+    .leftPart{
+        float: left;
+    }
+    .fullscreen:hover{
+        cursor: pointer;
+    }
+
+    #speedRange{
+        width: 50px;
+        transition-duration: 1.5s;
+    }
+    #speedRange:hover{
+        width: 150px;
+        transition: all 1.5s;
+    }
+
+    #soundRange{
+        width: 50px;
+        transition-duration: 1.5s;
+    }
+    #soundRange:hover{
+        width: 150px;
+        transition: all 1.5s;
+    }
+    #start{
+        color: white;
+        margin-left: 10px;
+    }
+
+    #start, #stop, #first, #end, #forward, #backward, #mute, .timer, .rightPart{
+        color: white;
+        cursor: pointer;
+        background-color: transparent;
+    }
+</style>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css"></link>
+    <script src="https://kit.fontawesome.com/212d832ea4.js" crossorigin="anonymous"></script>
+	<title>Lab 1 Task 1</title>
+</head>
+<body>
+
+<div id="allCont">
+    <video id="video" src="./video/frozen.mp4"  width="800px"></video>
+    <!-- Controls -->    
+    <div id="vid-controls">
+        <div>
+            <input type="range" id="VidRange" value="0"/>
+        </div>
+        <div class="leftPart">
+        <i id="start" class="fa-sharp fa-solid fa-play"></i>
+        <i id="stop" class="fa-solid fa-pause"></i>
+        <b id="first"><<</b>     
+        <b id="backward"><</b>    
+        <b id="forward">></b>     
+        <b id="end">>></b>  
+        <span class="timer"><span id="vidCurr">00:00</span>/<span id="vidTotal">00:00</span></span>
+
+        <input  id="soundRange" type="range" min="0" max="1" value="1" step="0.01"/>
+        <button id="mute" style="margin-right: 5px;"><i class="fa-solid fa-volume-xmark"></i></button>
+        </div>
+
+        <div class="rightPart">
+        <input id="speedRange" type="range" min="0.25" max="16" value="1" step="0.25" onclick="vidSpeed()" oninput="vidSpeed()"/><span id="test"></span>
+        <span id="SpeedIndicator">1 x</span>
+        <i id="myfs" class="fa-sharp fa-solid fa-expand fa-xl fullscreen"></i><!--Full screen-->
+        </div>
+    </div>
+</div>
+
+    <script>
+        var videoLenght = 0;
+        var vid = document.getElementById("video");
+        var vidTotal = document.getElementById("vidTotal");
+        var vidCurr = document.getElementById("vidCurr");
+        var myMins;
+        var mySecs;
+        var myTotal;
+        var fullscreen = false;
+
+        vid.onloadedmetadata = function(){
+            videoLenght = vid.duration;
+            myTotal = Math.floor(vid.duration);
+            myMins = Math.floor(myTotal / 60);
+            mySecs = myTotal - (myMins*60);
+            (mySecs < 10) ? mySecs = "0"+mySecs : mySecs;
+            vidTotal.innerText = myMins+":"+mySecs;
+        }
+
+        var VidRange = document.getElementById("VidRange"); 
+        vid.addEventListener("timeupdate", function(){
+            VidRange.value = vid.currentTime;
+
+            myTotal = Math.floor(vid.currentTime);
+            myMins = Math.floor(myTotal / 60);
+            mySecs = myTotal - (myMins*60);
+            mySecs < 10 ? mySecs = "0"+mySecs : mySecs;
+            vidCurr.innerText = myMins+":"+mySecs;
+        });
+
+        VidRange.addEventListener("change", function(){
+            vid.currentTime = VidRange.value;
+        });
+
+        var start = document.getElementById("start");
+        start.addEventListener("click", function(){
+            vid.play();
+            fullscreen();
+        });
+
+        var mystop = document.getElementById("stop");
+        mystop.addEventListener("click", function(){
+            vid.pause();
+        });
+
+        var first = document.getElementById("first");
+        first.addEventListener("click", function(){
+            vid.currentTime = 0;
+        });
+
+        var backward = document.getElementById("backward");
+        backward.addEventListener("click", function(){
+            if(vid.currentTime > 5)
+            {
+            vid.currentTime = vid.currentTime -5;
+            }else{
+            vid.currentTime = 0;
+            }
+        });
+
+        var forward = document.getElementById("forward");
+        forward.addEventListener("click", function(){
+            if(vid.currentTime < (videoLenght-5))
+            {
+            vid.currentTime = vid.currentTime + 5;
+            }else{
+            vid.currentTime = videoLenght;
+            }
+        });
+
+        var end = document.getElementById("end");
+        end.addEventListener("click", function(){
+            vid.currentTime = videoLenght;
+        });
+
+        var soundRange = document.getElementById("soundRange");
+        soundRange.addEventListener("change", function(){
+            vid.volume = soundRange.value;
+        });
+
+        var mute = document.getElementById("mute");
+        mute.addEventListener("click",function(){
+            soundRange.value = 0;
+            vid.volume = soundRange.value;
+        });
+
+        var speedRange = document.getElementById("speedRange");
+        function vidSpeed(){
+            vid.playbackRate = speedRange.value;
+            document.getElementById("test").innerText = speedRange.value;
+        }
+
+        var myfs = document.getElementById("myfs");
+        myfs.addEventListener("click",function(){
+            vid.requestFullscreen();
+        });
+
+        var vidControls = document.getElementById("vid-controls");
+
+        var allCont = document.getElementById("allCont");
+        allCont.addEventListener("mouseover", function(){
+            vidControls.style.opacity = 1;
+            vidControls.style.transitionDuration = 1;
+        });
+
+        allCont.addEventListener("mouseout", function(){
+            vidControls.style.opacity = 0;
+            vidControls.style.transitionDuration = 4;
+        });
+    </script>
+</body>
+</html>

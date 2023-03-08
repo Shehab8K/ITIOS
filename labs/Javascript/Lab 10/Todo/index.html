@@ -1,0 +1,267 @@
+<style>
+html {
+  background-image: linear-gradient(to left bottom, #F1DBBF 50% , #AA5656 50%);
+  background-attachment: fixed;
+  font-family: 'helvetica neue';
+}
+
+h1 {
+  color: white;
+  padding: 10px;
+}
+
+.box {
+  max-width: 400px;
+  margin: 50px auto;
+  background: white;
+}
+
+#heading {
+  background-color: #AA5656;
+  text-align: center;
+}
+
+.item {
+  position: relative;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+
+}
+
+input:checked+p {
+  text-decoration: line-through;
+  text-decoration-color: #AA5656;
+}
+
+input[type="checkbox"] {
+  margin: 20px;
+}
+
+p {
+  max-width: 14em;
+  margin: 0.2em;
+  padding: 1em;
+  font-size: 1.3em;
+  font-weight: 400;
+  overflow-wrap: break-word;
+}
+
+form.item {
+  margin-left: 20px;
+}
+
+button {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border-color: transparent;
+  background-color: #AA5656;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+input[type="text"] {
+  text-align: center;
+  height: 2.5em;
+  border: none;
+  font-size: 20px;
+  font-weight: 200;
+  width: 16em;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-bottom: 3px solid #AA5656;
+}
+
+footer {
+  margin-top: 8%;  
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+.fa-trash{
+  position: absolute;
+  right: 5%;
+  cursor: pointer;
+}
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>To Do List</title>
+</head>
+
+<body>
+  <div class="box" id="heading">
+    <h1>ToDo List</h1>
+  </div>
+
+  <div class="box">
+
+        <form action="/" method="post"  id="myMainContainer">
+          <div class="item">
+            <input type="checkbox" name="checkbox" onclick="myChecked(this)">
+            <p>Hello This to do list uses local storage to retrieve data back also with check or not ps: you need internet to load delete icon</p>
+            <i class="fa-solid fa-trash fa-lg" onclick="deleteItem(this)"></i>
+          </div>
+
+          <input type="hidden" name="listName" value=""/>
+        </form>
+
+
+      <form class="item" action="/index.html" method="post">
+        <input id="userInput" type="text" name="newItem" placeholder="New Item" value="" autocomplete="off">
+        <button type="button" onclick="selectItem()">+</button>
+
+      </form>
+  </div>
+
+
+  <script src="https://kit.fontawesome.com/212d832ea4.js" crossorigin="anonymous"></script>
+  
+<script>
+    const mymain = document.getElementById("myMainContainer");
+
+    // Check Local Storage
+    if(!(localStorage.getItem("myNotes"))){
+      let arr = [];
+      localStorage.setItem("myNotes",JSON.stringify(arr));
+    }else{
+      loadAll();
+    }
+
+
+    function myChecked(element){
+      let isChecked = element;
+      let elementValue = isChecked.nextElementSibling.innerText;
+
+      let getData2 = JSON.parse(localStorage.getItem("myNotes"));
+
+      for(let i=0; i<getData2.length; i++){
+        if((getData2[i].note == elementValue) && !(getData2[i].isChecked == (JSON.stringify(isChecked.checked))))
+        {
+            getData2[i].isChecked = isChecked.checked;
+            break;
+        }
+      }
+      localStorage.clear();
+      localStorage.setItem("myNotes", JSON.stringify(getData2));
+    }
+
+    function deleteItem(element){
+      let myElement = element;
+      let myparent = myElement.parentNode;
+      let deletedNote = myElement.previousElementSibling;
+      let deletedCheck = deletedNote.previousElementSibling;
+
+      myparent.parentNode.removeChild(myparent);
+
+      let getData = JSON.parse(localStorage.getItem("myNotes"));
+      for(let i=0; i<getData.length; i++){
+        //(Problem) -> if it is checked true and true = true BUT if not checked false and false = false not true making it imposible to access if condition
+        console.log(getData[i].isChecked);
+        console.log(deletedCheck.checked);
+        console.log((JSON.stringify(getData[i].isChecked ) === JSON.stringify(deletedCheck.checked)));
+
+        if((getData[i].note == deletedNote.innerText))
+        {
+            getData.splice(i,1);
+            console.log("deleted");
+            break;
+        }
+      }
+      localStorage.clear();
+      localStorage.setItem("myNotes", JSON.stringify(getData));
+    }
+
+    function selectItem(){
+        let  userInput = document.getElementById("userInput");
+        addItem(userInput.value);
+
+        let currData = {
+          isChecked: "false",
+          note: userInput.value
+        }
+        let myArrData = JSON.parse(localStorage.getItem("myNotes"));
+        myArrData.push(currData);
+
+
+        localStorage.setItem("myNotes",JSON.stringify(myArrData));
+        userInput.value = "";
+    }
+
+
+    function addItem(input){
+        let mydiv = document.createElement("div");
+        let myinput = document.createElement("input");
+        let myP = document.createElement("p");
+        let myI = document.createElement("i");
+
+        mydiv.setAttribute("class","item");
+        
+        myinput.setAttribute("type","checkbox");
+        myinput.setAttribute("name","checkbox");
+        myinput.setAttribute("onclick","myChecked(this)");
+
+        let newContent = document.createTextNode(input);
+        myP.appendChild(newContent);
+
+        myI.setAttribute("class","fa-solid fa-trash fa-lg");
+        myI.setAttribute("onclick","deleteItem(this)");
+        
+        // Appending 3 elements in div
+        mydiv.appendChild(myinput);
+        mydiv.appendChild(myP);
+        mydiv.appendChild(myI);
+
+        // Append the div itself
+        mymain.appendChild(mydiv);
+    }
+
+
+    function loadAll(){
+
+      let getData = JSON.parse(localStorage.getItem("myNotes"));
+      for(let i=0; i<getData.length; i++)
+      {      
+        let mydiv = document.createElement("div");
+        let myinput = document.createElement("input");
+        let myP = document.createElement("p");
+        let myI = document.createElement("i");
+
+        mydiv.setAttribute("class","item");
+
+        myinput.setAttribute("type","checkbox");
+        myinput.setAttribute("name","checkbox");
+        myinput.setAttribute("onclick","myChecked(this)");
+
+        myI.setAttribute("class","fa-solid fa-trash fa-lg");
+        myI.setAttribute("onclick","deleteItem(this)");
+        let currNote = document.createTextNode(getData[i].note);
+        myP.appendChild(currNote);
+        if(getData[i].isChecked == true){
+          myinput.setAttribute("checked","");
+        }
+
+        // Appending 3 elements in div
+        mydiv.appendChild(myinput);
+        mydiv.appendChild(myP);
+        mydiv.appendChild(myI);
+
+        // Append the div itself
+        mymain.appendChild(mydiv);
+
+      }
+    }
+</script>
+</body>
+<footer>
+      <span>Made by Shehab</span>
+</footer>
+</html>

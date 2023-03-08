@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>title</title>
+</head>
+<body>
+    <div style="margin: 100px auto; width: 600px;">
+	<span style="margin-right: 0.9em;">Red:</span> 
+    <input style="width: 460px;" id="red" type="range" min="0" max="255" step="1" value="0" onclick="change()" oninput="change()"/><span id="redV"></span><br/>
+	
+    <span>Green:</span> 
+    <input style="width: 460px;" id="green" type="range" min="0" max="255" step="1" value="0" onclick="change()" oninput="change()"/><span id="greenV"></span><br/>
+	
+    <span style="margin-right: 0.3em;">Blue :</span> 
+    <input style="width: 460px;" id="blue" type="range" min="0" max="255" step="1" value="0"onclick="change()" oninput="change()"/><span id="blueV"></span><br/>
+
+    <h2 id="mytext" style="font-weight: 900;">Change the 3 Color Ranges and observe the change</h2>
+    </div>
+</body>
+<script>
+    var mytext = document.getElementById("mytext");
+
+    function change(){
+        var red = document.getElementById("red").value;
+        var green = document.getElementById("green").value;
+        var blue = document.getElementById("blue").value;
+        console.log(`${red}`)
+
+        document.getElementById("redV").innerText = red;
+        document.getElementById("greenV").innerText = green;
+        document.getElementById("blueV").innerText = blue;
+        
+        mytext.style.color = `rgb(${red},${green},${blue})`;
+    }
+</script>
+</html>

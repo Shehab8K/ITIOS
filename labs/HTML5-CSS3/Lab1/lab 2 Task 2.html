@@ -1,0 +1,61 @@
+<style>
+    input {  
+    margin-bottom: 5px;
+    border: 2px solid red;
+    }
+
+    .user:valid{
+        border: 2px solid green;
+    }
+
+    .user:valid + span::after {
+    content: "✔";      
+    color: green;
+    }
+
+    .email:valid{
+        border: 2px solid green;
+    }
+    .email:valid + span::after {
+    content: "✔";      
+    color: green;
+    }
+
+    .user:invalid  + span::after{  
+    border-color: red;
+    color: red;
+    content: "You need to enter letters only and atleast 6 characters";
+    }
+
+    .email:invalid + span::after{
+    border-color: red;
+    color: red;  
+    content: "You need to enter email";
+    }
+</style>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>title</title>
+</head>
+<body>
+	<div>
+        <img src="./image/download.png" alt="">
+        <form action="">
+            <div >
+                <input class="user"  type="text" name="usr"  placeholder="Username" required pattern="[a-zA-Z]{6,}"/>
+                <span></span>
+            </div> <!--user must be letters & not less than 6-->
+            
+            <!-- <span id="usrtext">You need to enter letters only and atleast 6 characters</span> <br/> -->
+            <div>
+                <input class="email" type="email" placeholder="Email" required/>
+                <span></span>
+            </div>
+            <!-- <span id="emailtext"></span> <br/> -->
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

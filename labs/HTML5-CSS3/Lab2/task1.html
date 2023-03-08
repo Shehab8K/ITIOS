@@ -1,0 +1,55 @@
+<style>
+    #container{
+        width: 50%;
+        margin: 200px auto;
+        text-align: center;
+    }
+</style>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Geo Location</title>
+</head>
+<body>
+	<div id="container">
+        <h2>Hello, Please click location button to get your location</h2>
+        <button onclick="mylocaction()">Location</button>        
+    </div>
+
+    <script>
+       function mylocaction(){
+            navigator.geolocation.getCurrentPosition(locCallBackFun,showErr,options)
+        }
+
+        function locCallBackFun(e){
+            console.log(e);
+            var long = e.coords.longitude;
+            var lat = e.coords.latitude;
+            location.assign("http://maps.google.com/maps?q" + lat + ",+" + long);
+        }
+
+        function showErr(x) {
+        switch (x.code) {
+          case 0:
+            console.log(x.message);
+            break;
+          case 1:
+            console.log(x.message);
+            break;
+          case 2:
+            console.log(x.message);
+            break;
+          case 3:
+            console.log("no time");
+            break;
+        }
+      }
+
+        var options = {
+            enableHighAccuracy: true
+        };
+        
+    </script>
+</body>
+</html>

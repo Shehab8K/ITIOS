@@ -1,0 +1,107 @@
+<style>
+        #container {
+        width: 50%;
+        margin: 200px auto;
+    }
+
+    input {  
+    margin-bottom: 5px;
+    border: 2px solid red;
+    }
+
+    .user:valid{
+        border: 2px solid green;
+    }
+
+    .user:valid + span::after {
+    content: "✔";      
+    color: green;
+    }
+
+    .email:valid{
+        border: 2px solid green;
+    }
+    .email:valid + span::after {
+    content: "✔";      
+    color: green;
+    }
+
+    .user:invalid  + span::after{  
+    border-color: red;
+    color: red;
+    content: "You need to enter letters only and atleast 6 characters";
+    }
+
+    .email:invalid + span::after{
+    border-color: red;
+    color: red;  
+    content: "You need to enter email";
+    }
+
+    #myform{
+        display:initial;
+    }
+    #hello{
+        display: none;
+    }
+</style>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>title</title>
+</head>
+<body>
+	<div id="container">
+        <form action="./task2-2.html" id="myform">
+            <div >
+                <input class="user" id="usr"  type="text" placeholder="Username" required pattern="[a-zA-Z]{6,}"/>
+                <span></span>
+            </div> <!--user must be letters & not less than 6-->
+            
+            <!-- <span id="usrtext">You need to enter letters only and atleast 6 characters</span> <br/> -->
+            <div>
+                <input class="email" id="em" type="email" placeholder="Email" required/>
+                <span></span>
+            </div>
+            <!-- <span id="emailtext"></span> <br/> -->
+            <button id="btn">Submit</button>
+        </form>
+
+        <div id="hello">
+            <h2>Hello <span id="printusr"></span> 😁</h2>
+            <h5>This is your email : <span id="printemail"></span></h5>
+        </div>
+    </div>
+
+    <script>
+        var btn = document.getElementById("btn");
+        var hello = document.getElementById("hello");
+        var printusr = document.getElementById("printusr");
+        var printemail = document.getElementById("printemail");
+        var form = document.getElementById("myform");
+        console.log(form);
+        var username;
+        var useremail;
+        console.log(printemail, printusr);
+
+        btn.addEventListener("click",function(){
+            var myname = document.getElementById("usr").value;
+            var myemail = document.getElementById("em").value;
+           localStorage.setItem("Username",myname);
+           localStorage.setItem("Email", myemail);
+
+        
+        //   username = localStorage.getItem("Username");
+        //   useremail = localStorage.getItem("Email");
+            // console.log(username)
+
+        //   printusr.innerText += localStorage.getItem("Username");
+        // //   printemail.innerText += useremail;
+
+        //   form.style.display = "none";
+        //   hello.style.display = "block";
+        });
+    </script>
+</body>
+</html>

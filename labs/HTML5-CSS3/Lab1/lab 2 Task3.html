@@ -1,0 +1,58 @@
+<style>
+    .btn{
+        width: 150px;
+        height: 30px;
+        border-radius: 20px;
+    }
+
+    .container{
+        width: 200px;
+        margin: 200px auto;
+    }
+    .btn:hover{
+        animation-name: mybtn;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes mybtn
+    {
+        0%   {
+            background-color: red;
+            color: white;
+            box-shadow: 5px 5px yellow;
+        }
+        25%  {
+            background-color: yellow;
+            color: black;
+            box-shadow: 5px 5px blue;
+        }
+        50%  {
+            background-color: blue;
+            color: white;
+            box-shadow: 5px 5px purple;
+        }
+        75% {
+            background-color: purple;
+            color: white;
+            box-shadow: 5px 5px green;
+        }
+        100% {
+            background-color: green;
+            color: white;
+            box-shadow: 5px 5px red;
+        }
+    }
+</style>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>title</title>
+</head>
+<body>
+    <div class="container">
+	<button class="btn">Hover to blink</button>
+    </div>
+</body>
+</html>

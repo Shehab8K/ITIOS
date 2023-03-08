@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>title</title>
+</head>
+<body>
+    <div id="hello">
+        <h2>Hello <span id="printusr"></span> 😁</h2>
+        <h5>This is your email : <span id="printemail"></span></h5>
+    </div>
+
+    <script>
+        var printusr = document.getElementById("printusr");
+        var printemail = document.getElementById("printemail");
+
+        var username;
+        var useremail;
+
+        username = localStorage.getItem("Username");
+        useremail = localStorage.getItem("Email");
+
+        printusr.innerText = username;
+        printemail.innerText = useremail;
+    </script>
+</body>
+</html>

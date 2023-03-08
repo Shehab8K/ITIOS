@@ -1,0 +1,58 @@
+<style>
+    #container{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 40%;
+        margin: 0 auto;
+    }
+    span{
+        display: flex;
+        align-items: center;
+        padding: 1em 0;
+        border-bottom: 1px solid gray;
+    }
+    span>div{
+        margin-left: 3em;
+    }
+    span>img{
+        border-radius: 50%;
+    }
+</style>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+
+    <script>
+        
+        let url = "https://reqres.in/api/users?page=2";
+        fetch(url)
+            .then(x => x.text())
+            .then(data => {
+                let demo = JSON.parse(data);
+                let mydata = demo.data;
+                mydata.forEach(element => {
+                    let span = document.createElement("span");
+                    let row = 
+                    `<img src="${element.avatar}" alt="">
+                     <div>Email : ${element.email}</div>`
+                    span.innerHTML =row;
+                   document.getElementById("container").append(span);
+
+                });
+                // document.getElementById("container").innerHTML = mydata.data[1].email;
+            })
+            .catch( error =>
+            document.getElementById("container").innerText = error
+            );
+    </script>
+</body>
+</html>

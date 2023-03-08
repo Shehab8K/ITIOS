@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="NotPad.jnlp">
+  <information>
+    <title>NotPad</title>
+    <vendor>Kimo Store</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="NotPad.jar" size="6531" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="800" height="600" main-class="notpad.NotPad"  name="NotPad" />
+  <update check="always"/>
+</jnlp>
