@@ -9,14 +9,14 @@ Welcome to our professional JavaScript Website
 - Font Awesome
 
 ## 📃 Pages
-- [Home](https://omar456-asc.github.io/FrontEndJSProject/)
-- [Login](https://omar456-asc.github.io/FrontEndJSProject/assets/HTML/login.html) & [Signup](https://omar456-asc.github.io/FrontEndJSProject/assets/HTML/register.html)
-- [About us](https://omar456-asc.github.io/FrontEndJSProject/assets/HTML/about.html)
-- [Contact us](https://omar456-asc.github.io/FrontEndJSProject/assets/HTML/contact-us.html)
-- [Product details](https://omar456-asc.github.io/FrontEndJSProject/assets/HTML/product-details.html) <i>Choose different products to get their details</i>
-- [Checkout](https://omar456-asc.github.io/FrontEndJSProject/assets/HTML/checkout.html)
-- [Slided Cart](https://omar456-asc.github.io/FrontEndJSProject/) <i>Press Cart icon on navbar</i>
-## 🎥 [Watch Website Demo Video](https://github.com/omar456-asc/FrontEndJSProject#demo)
+- [Home](https://shehab8k.github.io/ITIOS/projects/Javascript/)
+- [Login](https://shehab8k.github.io/ITIOS/projects/Javascript/assets/HTML/login.html) & [Signup](https://shehab8k.github.io/ITIOS/projects/Javascript/assets/HTML/register.html)
+- [About us](https://shehab8k.github.io/ITIOS/projects/Javascript/assets/HTML/about.html)
+- [Contact us](https://shehab8k.github.io/ITIOS/projects/Javascript/assets/HTML/contact-us.html)
+- [Product details](https://shehab8k.github.io/ITIOS/projects/Javascript/assets/HTML/product-details.html) <i>Choose different products to get their details</i>
+- [Checkout](https://shehab8k.github.io/ITIOS/projects/Javascript/assets/HTML/checkout.html)
+- [Slided Cart](https://shehab8k.github.io/ITIOS/projects/Javascript/) <i>Press Cart icon on navbar</i>
+## 🎥 [Watch Website Demo Video](https://shehab8k.github.io/ITIOS/projects#demo)
 ## ⭐ Features
 - **Home**
     * Search for products (all products that apply to search query will appear)
