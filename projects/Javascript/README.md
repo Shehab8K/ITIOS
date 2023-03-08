@@ -16,7 +16,7 @@ Welcome to our professional JavaScript Website
 - [Product details](https://shehab8k.github.io/ITIOS/projects/Javascript/assets/HTML/product-details.html) <i>Choose different products to get their details</i>
 - [Checkout](https://shehab8k.github.io/ITIOS/projects/Javascript/assets/HTML/checkout.html)
 - [Slided Cart](https://shehab8k.github.io/ITIOS/projects/Javascript/) <i>Press Cart icon on navbar</i>
-## 🎥 [Watch Website Demo Video](https://shehab8k.github.io/ITIOS/projects#demo)
+## 🎥 [Watch Website Demo Video](https://github.com/Shehab8K/ITIOS/tree/main/projects/Javascript#demo)
 ## ⭐ Features
 - **Home**
     * Search for products (all products that apply to search query will appear)
