@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat App</title>
+
+    <!-- Reset file for css -->
+    <link rel="stylesheet" href="../CSS/reset.css" />
+    <!--  Style -->
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    
+  </head>
+  <body>
+
+  <div class="container-fluid">
+    <div class="row">
+          <!-- Chat Part -->
+          <div class="offset-lg-3 col-lg-6 hidder" id="msg-part">  
+            <div class="px-5  mx-auto form-container" id="makeMaxWidth">
+              <div id="message-container">
+                  <div id="joined"></div>
+              </div>
+              <form id="send-container">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text loginIcon-style"><i class="fa fa-user fa-lg"></i></span>
+                  </div>
+                  <input type="text" class="form-control"  id="message-input">
+                  <button type="submit" class="sendingButton" id="send-button">Send</button>  
+                </div>
+              </form>
+       
+            </div>
+          </div>
+          <!-- End Chat -->
+
+          <!-- Sign in Start -->
+          <div class="offset-lg-2 col-lg-8 " id="login-part">  
+            <div class="w-50 px-5  mx-auto form-container" id="makeMaxWidth">
+              <div id="msgErr"></div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text loginIcon-style"><i class="fa fa-user fa-lg"></i></span>
+                  </div>
+                  <input type="text" class="form-control"  id="loginInput" value="">
+                </div>
+                <button type="button" class="offset-lg-4 login-button" id="loginButton">Login</button>  
+            </div>
+          </div>
+          <!-- End Sign in -->
+
+        </div>
+      </div>
+    <!-- fontawesome us script -->
+    <script src="https://kit.fontawesome.com/8ba67097ac.js" crossorigin="anonymous"></script>
+        <!-- Scripts -->
+        <script  src="http://localhost:3000/socket.io/socket.io.js"></script>
+        <script  src="js/script.js"></script>    
+  </body>
+</html>

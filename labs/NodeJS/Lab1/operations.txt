@@ -1,0 +1,5 @@
+add occured on 3 elements and result = 18 
+sub occured on 3 elements and result = 2 
+multi occured on 3 elements and result = 150 
+div occured on 3 elements and result = 0.6666666666666666 
+div occured on 5 elements and result = 0.011111111111111112 

@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+.main-container
+{
+    width: 100%;
+    position: fixed;
+    background-color: white;
+    border-bottom: 2px solid lightgray;
+    z-index: 55;
+}
+
+.menutitle
+{
+    font-family: 'Playfair Display', serif;
+    padding: 1.5em;
+    font-size: 1.2em;
+    float: left;
+} 
+
+.sidemenu
+{
+    margin-right: 4em;
+    float: right;
+}
+.sidemenu>a
+{
+    padding: 2em 1.5em 1.5em;
+    color: black;
+    text-decoration: none;
+    margin-right: 2em;
+    float: left;
+}
+.carosel
+{
+    float: none;
+    height: 800px;
+    width: 100%;
+    background-image: url(./hamburger.jpg);
+}
+.carosel-text
+{
+    font-family: "Segoe UI",Arial,sans-serif;
+    font-size: 2em;
+    font-weight: 400;
+    opacity: 0.7;
+    letter-spacing: 5px;
+    position: absolute;
+    bottom: 0.5%;
+    left: 3%;
+}
+
+.page-container
+{
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.span-class 
+{ 
+    background-color: #F1F1F1;
+    padding: 4px; 
+}
+
+.title
+{
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    letter-spacing: 4px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.subtitle
+{
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.first
+{
+    overflow: hidden;
+    margin-top: 5em;
+    padding: 5em 0em 5em;
+}
+.f-right
+{
+    float: right;
+    width: 50%;
+    padding: 2em 3em 1em 3em;
+    box-sizing: border-box;
+}
+.f-left
+{   
+    margin-left: 3em;
+    height: 600px;
+    width: 500px;
+    background-image: url(./tablesetting2.jpg);
+    background-size: cover;
+    float: left;
+    box-sizing: border-box;
+}
+.paragraph
+{
+    font-size: 18px;
+    line-height: 27px;
+}
+.highlighted
+{
+    color: rgb(91, 91, 91);
+    padding-right: 1em;
+}
+.myborder
+{
+    float: none;
+    border: 0.5px solid lightgray;
+}
+
+.second
+{
+    overflow: hidden;
+    padding: 5em 0em;
+}
+.s-right
+{
+    margin-right: 3em;
+    height: 600px;
+    width: 500px;
+    background-image: url(./tablesetting.jpg);
+    background-size: cover;
+    float: right;
+    box-sizing: border-box;
+}
+.s-left
+{
+    margin-top: 1em;
+    float: left;
+    width: 50%;
+    padding: 2em 3em 1em 3em;
+    box-sizing: border-box;
+}
+.s-subtitle
+{
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    letter-spacing: 4px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.s-content
+{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    line-height: 23px;
+    color: #757575;
+}
+.mycontact
+{
+   padding: 4em 3em;
+}
+.contitle
+{
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 7px;
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 50px;
+}
+.contact-info
+{
+    font-family: "Times New Roman", Georgia, serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 23px;
+}
+.contact2
+{
+    font-family: "Times New Roman", Georgia, serif;
+    color: #607d8b;
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 800;
+}
+form input
+{
+    width: 100%;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    border: none;
+    border-bottom: 1px solid lightgray;
+}
+form button
+{
+    font-family: "Times New Roman", Georgia, serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 23px;
+    margin-top: 2.5em;
+    padding: 1em 1.5em;
+    background-color: #F1F1F1;
+    border: none;
+}
+form button:hover
+{
+    background-color: lightgrey;
+}
+
+footer
+{
+    width: 100%;
+    text-align: center;
+    padding: 3em 0;
+    background-color: #F1F1F1;
+}

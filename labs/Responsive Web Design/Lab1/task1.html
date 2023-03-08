@@ -1,0 +1,84 @@
+<style>
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td
+{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var
+{font-style:normal;font-weight:normal;}
+ol,ul {list-style:none;}
+caption,th {text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before,q:after{content:'';}abbr,acronym {border:0;}
+
+.nav{
+    display: flex;
+    width: 100%;
+    background-color: lightgray;
+    justify-content: space-around;
+    align-items: center;
+    height: 5%;
+}
+.content{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.cont1, .cont2{
+    width: 49%;
+    height: 10em;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.footer{
+    background-color: lightgray;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+        .nav {
+          display: flex;
+          flex-direction: column;
+          height: 140px;
+        }
+        .content {
+          display: block;
+        }
+        .cont1, .cont2 {
+            box-sizing: border-box;
+          width: 100%;
+        }
+      }
+</style>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>title</title>
+</head>
+<body>
+	<div class="main">
+        <div class="nav">
+            <div>Home</div>
+            <div>About</div>
+            <div>Services</div>
+            <div>Contact</div>
+        </div>
+        <!-- ------------------------------- -->
+        <div class="content">
+            <div class="cont1">
+                <div>This is a flex item.</div>
+                <div class="footer">Footer</div>
+            </div>
+
+            <div class="cont2">
+                <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem delectus quod, rerum maxime, nemo iure veniam recusandae vero quo distinctio tempora ab voluptate quam ea, soluta sint. Voluptatum, similique provident.</div>
+                <div class="footer">Footer</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

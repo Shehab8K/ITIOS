@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Register Style -->
+    <link rel="stylesheet" href="register.css" />
+  </head>
+  <body>
+
+    <!-- Register Section -->
+  <div class="container-fluid">
+    <div class="row">
+
+          <div class="col-xl-7 col-lg-12">  
+            <div class="w-50 px-5  mx-auto form-container" id="makeMaxWidth"> 
+              <h2 class="signin-text">Sign Up</h2>
+
+                <form action="/welcome" method="POST">
+                  <p id="errMsg"></p>
+                  <label for="UsernameInput" id="usrNormal" class="form-label fw-bold" >Username</label> 
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" id="userName" name="username" value="">
+                </div>
+
+                <label for="userEmail" id="emailNormal" class="form-label fw-bold">Email</label>
+                <div class="input-group mb-3">
+
+                  <input  type="text" class="form-control" id="userEmail" name="Email" value="">
+                </div>
+
+                <label for="password1" id="passNormal" class="form-label mt-2 fw-bold">Phone</label>
+                <div class="input-group mb-3">
+                  <input type="number" class="form-control" id="userPhone" name="mobile" value="">
+                </div>
+
+                <label for="password2" id="rePassNormal" class="form-label mt-2 fw-bold">Address</label>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" id="userAddress" name="Address" value="">
+                </div>
+
+                <button id="myregisterbtn" class="register-button" type="submit">Register</button>
+                </form>
+              <!-- </form>   -->
+            </div>
+          </div>
+          <!-- The Right Side (Second column) -->
+          <div class="col-lg-5 d-xl-block d-none second-part-container">  
+              <img src="Man_Waving_Hand_Cartoon_Vector.png" alt="register side image" class="img-fluid register-img">
+          </div>
+        </div>
+      </div>
+  </body>
+</html>
