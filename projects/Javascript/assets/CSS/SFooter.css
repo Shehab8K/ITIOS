@@ -1,0 +1,254 @@
+/*########################Header-NavBar##########################################*/
+  /* Shehab Start */
+  .shop-title {
+    font-family: lobster;
+    font-size: 2em;
+  }
+  .btns-edit {
+    color: black;
+    background-color: white;
+    font-size: 1.2em;
+    padding: 0.5em 1em;
+    margin-right: 1em;
+    position: relative;
+    border: none;
+    cursor: pointer;
+  }
+  .btns-edit::after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    height: 0.1em;
+    background-color: black;
+    bottom: 0;
+    left: 0;
+    transform: scale(0, 1);
+  }
+  .btns-edit:hover::after {
+    transform: scale(1, 1);
+    transition: 0.3s;
+  }
+  .btns-edit:focus::after {
+    transform: scale(1, 1);
+  }
+  .menu-btns-edit {
+    text-align: center;
+  }
+  
+   .btn{
+    background-color: black;
+    color: white;
+  }
+  .btn:hover{
+    color: gray;
+  }
+  /* End Shehab */
+  .header-top-light .nav-link {
+    color: #969696;
+  }
+  .header-top-light .nav-link:hover {
+    color: #212529;
+  }
+  
+  .header-main {
+    position: relative;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+  .brand-wrap .logo,
+  .navbar-brand .logo {
+    margin-right: 7px;
+    max-height: 42px;
+    display: inline-block;
+  }
+  
+  .navbar-main .nav-link {
+    font-weight: 500;
+    color: #1c1c1c;
+  }
+  .navbar-main .nav-link:hover {
+    color: #666;
+  }
+  
+  .widget-header {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+  }
+  .widget-header a {
+    color: #343a40;
+  }
+  .widget-header a:hover {
+    color: #3167eb;
+  }
+  .widget-header i {
+    color: #969696;
+  }
+  .widget-header form {
+    min-width: 280px;
+  }
+  .widget-header .title {
+    display: block;
+  }
+  .widget-header .notify {
+    position: absolute;
+    top: -3px;
+    right: -10px;
+  }
+  .widget-header:hover i {
+    color: #3167eb;
+  }
+  .icon-xs,
+  .icon-sm,
+  .icon-md,
+  .icon-lg {
+    display: inline-block;
+    text-align: center;
+    flex-shrink: 0;
+    flex-grow: 0;
+  }
+  
+  .icon-xs {
+    width: 32px;
+    height: 32px;
+    line-height: 32px !important;
+    font-size: 16px;
+  }
+  
+  .icon-sm {
+    width: 48px;
+    height: 48px;
+    line-height: 48px !important;
+    font-size: 20px;
+  }
+  
+  .icon-md {
+    width: 60px;
+    height: 60px;
+    line-height: 60px !important;
+    font-size: 28px;
+  }
+  
+  .icon-lg {
+    width: 96px;
+    height: 96px;
+    line-height: 96px !important;
+    font-size: 42px;
+  }
+  .row-sm {
+    margin-right: -7px;
+    margin-left: -7px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .notify {
+    position: absolute;
+    top: -4px;
+    right: -10px;
+    display: inline-block;
+    padding: 0.25em 0.6em;
+    font-size: 12px;
+    line-height: 1;
+    text-align: center;
+    border-radius: 3rem;
+    color: #fff;
+    background-color: #fa3434;
+  }
+  
+  .widget-header .notify {
+    position: absolute;
+    top: -3px;
+    right: -10px;
+  }
+  /*################################### Footter ################################ */
+  footer{
+    background-color: #1c2331;
+  }
+  footer hr{
+    width: 60px; 
+    background-color: #7c4dff; 
+    height: 2px;
+  }
+  .Copyright{
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  .install-img img{
+    margin-top: -2.5em;
+    width: 8em;
+    height: 6em;
+    object-fit: contain;
+  }
+
+
+  @font-face {
+    font-family: lobster;
+    src: url(../Fonts/Lobster-Regular.ttf);
+  }
+  
+  /* ///////////////////////////Side-Nav/////////////////   */
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    right: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  .sidenavWidth{
+    width:350px;
+  }
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+  }
+  
+  .sidenav a:hover {
+    color: #cbc2c2;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  .delete:hover {
+    cursor: pointer;
+  }
+  .empty{
+    margin-left: 15px;
+      color: gray;
+      opacity: 0.6;
+      z-index: 7;
+  }
+  .Checkout{
+    margin-left: 80px;
+    margin-right: 20px;
+  }
+  @media screen and (max-height: 450px) {
+    .sidenav {
+      padding-top: 15px;
+    }
+    .sidenav a {
+      font-size: 18px;
+    }
+    .sidenavWidth{
+      width: 250px !important;
+    }
+  }
+  hr {
+    color: orange !important;
+    background-color: orange;
+    height: 6px;
+    opacity: 1 !important;
+  }
+  

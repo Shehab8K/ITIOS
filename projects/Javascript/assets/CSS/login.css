@@ -1,0 +1,100 @@
+html,body{
+    margin: 0;
+}
+.form-container{
+    padding: 5em;
+    border-radius: 25px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+    margin-top: calc(100%/10);
+}
+
+.welcome-text{
+    font-weight: 400;
+}
+.signin-text{
+    margin-top: 0.5em;
+    font-weight: bold;
+}
+/* Button */
+.login-button{
+    color: white;
+    background-color: #F47458;
+    border-radius: 15px;
+    padding: 0.2em 2em;
+    border: none;
+}
+.fa-arrow-right{
+    margin-left: 10px;
+    display: none;
+}
+.login-button:hover{
+    padding: 0.2em 1.5em 0.2em 2em;
+    background-color: #f85632;
+}
+.login-button:hover .fa-arrow-right{
+    display: inline;
+}
+/* End Button */
+.loginIcon-style{
+    background-color: rgb(240, 240, 240);
+}
+.forgot-pass{
+    color: grey;
+    text-decoration: none;
+    float: right;
+    font-size: small;
+}
+.forgot-pass:hover{
+    color:  #f85632;
+}
+.no-account{
+    color: grey;
+    text-align: center;
+    margin-top: 2em;
+}
+.signup{
+    font-weight: 600;
+    text-decoration: none;
+    color: #F47458;
+}
+.signup:hover{
+    color:  #f85632;
+    font-weight: bold;
+}
+/* I used !important to override bootstrap properties */
+input{
+    background-color: #FFF6F4 !important;
+}
+input:focus{
+    box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2) !important;
+    /* box-shadow: none !important; */
+}
+
+.fa-user, .fa-lock{
+    padding: 2px;
+    box-sizing: border-box;
+}
+/* /////////////// Second part on right side /////////// */
+.second-part-container{
+    background-color: #FFF6F4;
+    height: 100vh;
+}
+
+.login-img{
+    margin-left: -7em;
+    box-sizing: border-box;
+}
+
+/* /////////// Error Handling Style ////////////// */
+.errMsg{
+    color: red;
+}
+.hidder{
+    display: none;
+}
+
+@media screen and (max-width: 700px) {
+    #makeMaxWidth{
+        width: 90% !important;
+    }
+  }

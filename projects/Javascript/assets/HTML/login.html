@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+    rel="icon"
+    href="../images/Nav-bar/Favicon2.png"
+    type="image/icon type"
+  />
+    <!-- Reset file for css -->
+    <link rel="stylesheet" href="../CSS/reset.css" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css" />
+    <!-- fontAwsome -->
+    <!-- <link rel="stylesheet" href="../fontawesome/all.min.css" /> -->
+    <!-- Login Style -->
+    <link rel="stylesheet" href="../CSS/login.css" />
+  </head>
+  <body>
+
+    <!-- Login Section -->
+  <div class="container-fluid">
+    <div class="row">
+
+          <div class="col-xl-7 col-lg-12">  
+            <div class="w-50 px-5  mx-auto form-container" id="makeMaxWidth"> <!-- Edited in CSS -->
+              <h6 class="welcome-text">Welcome Back</h6>
+              <h2 class="signin-text">Sign In</h2>
+            <!-- Form Begin -->
+                <p class="errMsg hidder" id="myErrMsg"><i class="fa-solid fa-triangle-exclamation"></i> Wrong Username or Password</p>
+                <label for="exampleInputUser1" class="form-label fw-bold">Username</label>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text loginIcon-style"><i class="fa fa-user fa-lg"></i></span>
+                  </div>
+                  <input type="text" class="form-control" id="exampleInputUser1">
+                </div>
+
+                <label for="exampleInputPassword1" class="form-label mt-2 fw-bold">Password</label>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text loginIcon-style"><i class="fa-solid fa-lock fa-lg"></i></span>
+                  </div>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <a href="" class="forgot-pass">Forgot password?</a><br>
+                <button type="submit" class="login-button" id="mylogin">Login <i class="fa-solid fa-arrow-right"></i></button>
+                <p class="no-account">Don't have account? <a href="./register.html" class="signup">Sign Up</a></p>
+           
+            </div>
+          </div>
+          <!-- The Right Side (Second column) -->
+          <div class="col-lg-5 d-xl-block d-none second-part-container">  
+              <img src="../images/login/login.png" alt="login side image" class="img-fluid login-img">
+          </div>
+        </div>
+      </div>
+    <!-- fontawesome us script -->
+    <script src="../fontawesome/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../JavaScript/login.js"></script>
+  </body>
+</html>

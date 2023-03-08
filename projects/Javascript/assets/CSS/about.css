@@ -1,0 +1,48 @@
+.pic {
+  width: 450px;
+  border-radius: 25%;
+}
+.about {
+  align-items: center;
+  justify-content: space-around;
+}
+
+.text h2 {
+  font-size: 75px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.text h5 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+span {
+  color: #4070f4;
+}
+.text p {
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 1px;
+}
+.data {
+  margin-top: 20px;
+}
+.hire {
+  font-size: 18px;
+  /* background: #4070f4;
+  color: #fff; */
+  text-decoration: none;
+  border: none;
+  padding: 8px 25px;
+  border-radius: 6px;
+  transition: 0.5s;
+}
+
+.btn{
+  background-color: black;
+  color: white;
+}
+.btn:hover{
+  color: gray;
+}

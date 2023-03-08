@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>CheckOut</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+    rel="icon"
+    href="../images/Nav-bar/Favicon2.png"
+    type="image/icon type"
+  />
+    <!-- Font Awesome -->
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
+rel="stylesheet"
+/>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+
+    <style>
+      .hide{
+            display: none;
+        }
+        .bold{
+          font-weight: bold;
+        }
+        .divOverflow {
+          width: 100%;
+          height: 400px;
+          /* overflow-x: hidden; */
+          overflow-y: auto;
+          margin: auto;
+        }
+        
+        
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+
+.visaForm .card {
+    max-width: 500px;
+    margin: auto;
+    color: black;
+    border-radius: 20 px;
+}
+
+.visaForm p {
+    margin: 0px;
+}
+
+
+        .visaForm .container .h8 {
+          font-size: 30px;
+          font-weight: 800;
+          text-align: center;
+        }
+
+        .visaForm .btn.btn-primary {
+          width: 100%;
+          height: 70px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 15px;
+          background-image: linear-gradient(to right, #77A1D3 0%, #79CBCA 51%, #77A1D3 100%);
+          border: none;
+          transition: 0.5s;
+          background-size: 200% auto;
+
+        }
+
+
+        .visaForm .btn.btn.btn-primary:hover {
+          background-position: right center;
+          color: #fff;
+          text-decoration: none;
+        } 
+
+
+
+        .visaForm .btn.btn-primary:hover .fas.fa-arrow-right {
+          transform: translate(15px);
+          transition: transform 0.2s ease-in;
+        }
+
+        .visaForm .form-control {
+    color: white;
+    background-color: #223C60;
+    border: 2px solid transparent;
+    height: 60px;
+    padding-left: 20px;
+    vertical-align: middle;
+}
+
+.visaForm .form-control:focus {
+    color: white;
+    background-color: #0C4160;
+    border: 2px solid #2d4dda;
+    box-shadow: none;
+}
+
+.visaForm .text {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.visaForm ::placeholder {
+    font-size: 14px;
+    font-weight: 600;
+}
+        
+    </style>
+
+    <style src="../CSS/pay.css"></style>
+</head>
+
+<body>
+  <div class="row hide" style="width: 80%; margin: auto; margin-top: 50px;" id="done">
+    <div class="card" style="width: 100%; margin: auto;">
+      <img class="card-img-top" style="max-width: 25%; min-width: 200px; margin: auto;" src="../images/checkout/done.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title" style="text-align: center;">Your order is complete!</h5>
+        <p class="card-text" style="text-align: center;">You will recieve a confirmation email with order details</p>
+        <div class="col-md-12 text-center" style="margin-top: 20px;">
+            <a class="btn btn-primary me-md-2" type="button" style="background-color: #5dacbd; padding: 20px; font-weight: bold; color: white; font-size: small;" href="../../index.html">Make another order</a>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="row" style="width: 80%; margin: auto; margin-top: 50px;" id="allpayment">
+        <form class="container-lg col-lg-6">
+            <h2 style="font-weight: bold;">Check Out</h2>
+
+            <div class="btn-group shadow-0" role="group" style="margin-bottom: 10px;">
+                <a type="button" class="btn btn-link" data-mdb-color="dark" id="cartBtn" href="../../index.html">Cart</a>
+                <button type="button" class="btn btn-link bold" data-mdb-color="dark" id="infoBtn">Information</button>
+                <button disabled type="button" class="btn btn-link" data-mdb-color="dark" id="payBtn">Payment</button>
+            </div>
+
+            <!-- Information form -->
+            <div id="infoForm">
+                <div class="form-group" style="margin-top: 30px;" >
+
+                  <label for="contactinfo" style="margin-bottom: 3px; font-size: large;">Contact information:</label>
+                  <input type="text" class="form-control" id="contactinfo" style="margin-bottom: 3px;" placeholder="Email or phone number" required>
+                  
+                  <div class="form-check" style="margin-bottom: 30px;">
+                    <input class="form-check-input" type="checkbox" id="check_offers" name="option1" checked >
+                    <label class="form-check-label">Email me with news and offers</label>
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="contactinfo" style="margin-bottom: 10px; font-size: large;">Shipping address:</label>
+                    <div class="form-floating" style="margin-bottom: 10px;">
+                        <select class="form-select" id="country" aria-label="Floating label select example">
+                          <option selected>Egypt</option>
+                        </select>
+                        <label for="floatingSelect">Country/Region</label>
+                    </div>
+
+                </div>
+
+                
+                <div class="row g-2" style="margin-bottom: 10px;">
+
+                    <input type="text" class="form-control col-md" id="first_name" placeholder="First name" required>
+                    <input type="text" class="form-control col-md" id="last_name" placeholder="Last name" required>
+  
+                </div>
+
+                <div class="form-group" style="margin-bottom: 10px;">
+
+                    <input type="text" class="form-control col-md" id="company" placeholder="Company (optional)">
+                    
+                </div>
+
+                <div class="form-group" style="margin-bottom: 10px;">
+
+                    <input type="text" class="form-control col-md" id="address" placeholder="Address" required>
+  
+                </div>
+
+                <div class="form-group" style="margin-bottom: 10px;">
+
+                    <input type="text" class="form-control col-md" id="apartment" placeholder="Apartment, suite, etc.." required>
+  
+                </div>
+
+                <div class="row g-2" style="margin-bottom: 10px;">
+
+                    <input type="text" class="col-md form-control col-md" id="city" placeholder="City" required>
+
+                    <div class="col-md form-floating">
+                        <select class="form-select" id="government" aria-label="Floating label select example">
+                          <option selected value="oct">6th of October</option>
+                          <option value="alex">Alexandria</option>
+                          <option value="cairo">Cairo</option>
+                          <option value="giza">Giza</option>
+                        </select>
+                        <label for="floatingSelectGrid">Government</label>
+                    </div>
+
+                    <input type="text" class="col-md form-control col-md" id="postal" placeholder="Postal code" required>
+  
+                </div>
+
+                
+                <div class="form-group" style="margin-bottom: 10px;">
+
+                    <input type="tel" class="form-control col-md" id="phone" placeholder="Phone" required>
+  
+                </div>
+
+
+                <div class="form-check" style="margin-bottom: 30px;">
+                    <input class="form-check-input" type="checkbox" id="check_info" name="option1" >
+                    <label class="form-check-label">Save this information for next time</label>
+                </div>
+
+                <div class="row g-2 d-grid d-md-flex justify-content-md-end" style="margin-bottom: 100px;">
+                  <a href="../../index.html" class="btn btn-outline-info col-md" type="button" style="padding: 20px; font-weight: bold; font-size: small; margin-right: 10px;">&laquo; Continue shopping</a>
+                  <button class="btn btn-primary col-md" type="button" style="background-color: #5dacbd; padding: 20px; font-weight: bold; color: white; font-size: small;" id="shipBtn">Continue to payment</button>    
+                </div>
+                
+              </div>
+
+              <!-- payment form -->
+              <div id="payForm" class="hide" style="margin-bottom: 30px;">
+
+                <div class="form-group" style="margin-top: 30px;" >
+
+                  <label for="contactinfo" style="margin-bottom: 3px; font-size: large; font-weight: bold;">Choose payment method:</label><br>
+                  <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-info" id="cashBtn">Cash on Delivery</button>
+                    <button type="button" class="btn btn-info" id="visaBtn">Pay with VISA</button>
+                  </div><br><br>
+
+                  <label class="hide" for="cashBtn" style="margin-bottom: 3px; font-size: large;" id="cashMsg">You choosed Cash on Delivery</label>
+                  
+                  <div class="container p-0 hide visaForm" id="visaForm">
+                    <div class="card px-4">
+                        <p class="h8 py-3" style="text-align: center; font-weight: bold; font-size: large;">Payment Details</p>
+                        <div class="row gx-3">
+                            <div class="col-12">
+                                <div class="d-flex flex-column">
+                                    <p class="text mb-1">Person Name</p>
+                                    <input class="form-control mb-3" type="text" placeholder="Card name">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="d-flex flex-column">
+                                    <p class="text mb-1">Card Number</p>
+                                    <input class="form-control mb-3" type="number" placeholder="1234 5678 435678">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex flex-column">
+                                    <p class="text mb-1">Expiry</p>
+                                    <input class="form-control mb-3" type="text" minlength="6" maxlength="7" placeholder="MM/YYYY">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex flex-column">
+                                    <p class="text mb-1">CVV/CVC</p>
+                                    <input class="form-control mb-3 pt-2" type="password" minlength="3" maxlength="3" size="1" placeholder="***">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="btn btn-primary mb-3">
+                                    <span class="ps-3" id="totalPayNum" style="text-align: center;">Pay $243</span>
+                                    <span class="fas fa-arrow-right"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-end" style="margin-top: 20px;">
+                    <button class="btn btn-primary me-md-2" type="submit" style="background-color: #5dacbd; margin-bottom: 100px; padding: 20px; font-weight: bold; color: white; font-size: small;" id="orderBtn">Complete order</button>
+                  </div>
+
+              </div>
+
+
+            </form>
+
+        
+        </div>
+
+
+        <!-- list of Products and discount -->
+        <div class="container-lg col-lg-6" style="background-color: azure;padding-top: 25px;">
+            <div class="card mb-3 divOverflow" style="max-width: 540px;" id="shop">
+        </div>
+              
+              <hr class="hr" />
+              <div class="row" style="margin:auto">
+
+                <input type="text" class="col-8" id="discount" placeholder="Coupon">
+                <div class="col-4">
+                    <button class="btn btn-primary me-md-2" id="disBtn" type="button" style="background-color: lightslategray; padding: 10px; font-weight: bold; color: white; font-size: small;">Apply</button>
+                </div>
+                <br>
+                <label id="dismsg"></label>
+
+              </div>
+
+              <hr class="hr" />
+
+
+              <div class="row" style="margin:auto">
+
+                <label for="subtotal" class="col-8">Subtotal after discount:</label>
+                <label for="subtotal" class="col-4" style="font-weight: bold;" id="subTotal"></label>                
+
+              </div>
+
+              <div class="row" style="margin:auto">
+
+                <label for="dissubtotal" class="col-8">Subtotal after using coupon:</label>
+                <label for="dissubtotal" class="col-4" style="font-weight: bold;" id="dissubTotal"></label>                
+
+              </div>
+
+              <div class="row" style="margin:auto">
+
+                <label for="shipping" class="col-8">Shipping:</label>
+                <label for="contactinfo" class="col-4" id="shipValue">Calculated at next step</label>                
+
+              </div>
+
+              <hr class="hr" />
+
+              <div class="row" style="margin:auto; margin-bottom: 100px;">
+
+                <label for="total" class="col-8" style="font-weight: bold;">Total:</label>
+                <label for="total" id="totalPrice" class="col-4" style="font-weight: bold;">Calculated at next step</label>                
+
+              </div>
+
+
+
+
+        </div>
+    </div>
+    
+</body>
+
+<script src="../JavaScript/payment.js"></script>
+
+</html>

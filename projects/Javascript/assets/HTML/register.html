@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link
+    rel="icon"
+    href="../images/Nav-bar/Favicon2.png"
+    type="image/icon type"
+  />
+    <!-- Reset file for css -->
+    <link rel="stylesheet" href="../CSS/reset.css" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css" />
+    <!-- fontAwsome -->
+    <!-- <link rel="stylesheet" href="../fontawesome/all.min.css" /> -->
+    <!-- Register Style -->
+    <link rel="stylesheet" href="../CSS/register.css" />
+  </head>
+  <body>
+
+    <!-- Register Section -->
+  <div class="container-fluid">
+    <div class="row">
+
+          <div class="col-xl-7 col-lg-12">  
+            <div class="w-50 px-5  mx-auto form-container" id="makeMaxWidth"> <!-- Edited in CSS -->
+              <h2 class="signin-text">Sign Up</h2>
+              <!-- <form action="/register" method="post">  Form Begin --> 
+                <!-- I commented form in order to make JS and manual navigation -->
+                <label for="UsernameInput" id="usrNormal" class="form-label fw-bold">Username</label> <!-- 2 titles for each input 1 normal and the other for error -->
+                <label for="UsernameInput" id="usrErr" class="form-label fw-bold userTitle hidder"> <i class="fa-solid fa-triangle-exclamation userAlertIcon"></i>  Username <span class="userErrMsg">can be in letters and - only</span></label>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text registerIcon-style"><i class="fa fa-user fa-lg"></i></span>
+                  </div>
+                  <input type="text" class="form-control" id="UsernameInput" value="">
+                </div>
+
+                <label for="userEmail" id="emailNormal" class="form-label fw-bold">Email</label><!-- 2 titles for each input 1 normal and the other for error -->
+                <label for="userEmail" id="emailErr" class="form-label fw-bold emailTitle hidder"> <i class="fa-solid fa-triangle-exclamation emailAlertIcon"></i> Email <span class="emailErrMsg">Wrong format</span></label>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text registerIcon-style"><i class="fa-solid fa-envelope fa-lg"></i></span>
+                  </div>
+                  <input type="text" class="form-control" id="userEmail" value="">
+                </div>
+
+                <label for="password1" id="passNormal" class="form-label mt-2 fw-bold">Password</label><!-- 2 titles for each input 1 normal and the other for error -->
+                <label for="password1" id="passErr" class="form-label mt-2 fw-bold passTitle hidder"> <i class="fa-solid fa-triangle-exclamation passAlertIcon"></i> Password <span class="passErrMsg">Must be atleast 8 digits</span></label>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text registerIcon-style"><i class="fa-solid fa-lock fa-lg"></i></span>
+                  </div>
+                  <input type="password" class="form-control" id="password1" value="">
+                </div>
+
+                <label for="password2" id="rePassNormal" class="form-label mt-2 fw-bold">Retype Password</label><!-- 2 titles for each input 1 normal and the other for error -->
+                <label for="password2" id="rePassErr" class="form-label mt-2 fw-bold rePassTitle hidder"> <i class="fa-solid fa-triangle-exclamation passAlertIcon"></i> Retype Password <span class="rePassErrMsg">Not the same</span></label>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text registerIcon-style"><i class="fa-solid fa-lock fa-lg"></i></span>
+                  </div>
+                  <input type="password" class="form-control" id="password2" value="">
+                </div>
+
+                <input type="submit" hidden/>
+                <button id="myregisterbtn" class="register-button">Register <i class="fa-solid fa-arrow-right"></i></button>
+                <p class="no-account">Already have account? <a href="./login.html" class="signup">Login</a></p>
+              <!-- </form>   -->
+            </div>
+          </div>
+          <!-- The Right Side (Second column) -->
+          <div class="col-lg-5 d-xl-block d-none second-part-container">  
+              <img src="../images/register/Man_Waving_Hand_Cartoon_Vector.png" alt="register side image" class="img-fluid register-img">
+          </div>
+        </div>
+      </div>
+    <!-- fontawesome us script -->
+    <script src="../fontawesome/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../JavaScript/register.js"></script>
+  </body>
+</html>

@@ -1,0 +1,162 @@
+.btn{
+  background-color: black;
+  color: white;
+}
+.btn:hover{
+  color: gray;
+}
+/*################################### HEADER Scroller ################################ */
+.scroller {
+  background-color: #fe8ce3;
+  width: 0;
+  height: 4px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+/* ###################(SCROL UP BUTTON)############# */
+.up {
+  text-align: center;
+  width: 30px;
+  position: fixed;
+  bottom: 10px;
+  right: -30px;
+  background-color: #fe8ce3;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 5px;
+  border-radius: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.up:hover{
+  background-color:  rgb(255 27 176 / 90%);
+}
+.up.show {
+  right: 10px;
+}
+
+/* ###################(Products)############# */
+
+.wrapper {
+  width: 95%;
+  margin: 0 auto;
+}
+.button-value {
+  border: 2px solid #6759ff;
+  padding: 1em 2.2em;
+  border-radius: 3em;
+  background-color: transparent;
+  color: #6759ff;
+  cursor: pointer;
+}
+.active {
+  background-color: #6759ff;
+  color: #ffffff;
+}
+#products {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 1.5em;
+  
+  /* padding: 2em 0; */
+}
+.card {
+  background-color: #ffffff;
+  max-width: 18em;
+  margin-top: 1em;
+  padding: 1em;
+  border-radius: 5px;
+  box-shadow: 1em 2em 2.5em rgba(1, 2, 68, 0.08);
+ 
+}
+.image-container {
+  text-align: center;
+  cursor: pointer;
+}
+img {
+  max-width: 100%;
+  object-fit: contain;
+  height: 15em;
+}
+.container {
+  padding-top: 1em;
+  color: #110f29;
+}
+.container h5 {
+  font-weight: 500;
+}
+.hide {
+  display: none;
+}
+@media screen and (max-width: 720px) {
+  img {
+    max-width: 100%;
+    object-fit: contain;
+    height: 10em;
+  }
+  .card {
+    max-width: 10em;
+    margin-top: 1em;
+  }
+  #products {
+    grid-template-columns: auto auto;
+    grid-column-gap: 1em;
+  }
+}
+
+/* alerts */
+#pageMessages {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  width: 30%;
+  z-index: 200;
+}
+
+.alert {
+  position: relative;
+}
+
+.alert .close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 1em;
+}
+
+.alert .fa {
+  margin-right: 0.3em;
+}
+/*################################### Footter ################################ */
+footer{
+  background-color: #1c2331;
+}
+footer hr{
+  width: 60px; 
+  background-color: #7c4dff; 
+  height: 2px;
+}
+.Copyright{
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.install-img img{
+  margin-top: -2.5em;
+  width: 8em;
+  height: 6em;
+  object-fit: contain;
+}
+
+
+@font-face {
+  font-family: lobster;
+  src: url(../Fonts/Lobster-Regular.ttf);
+}
+.text-white1{
+  --bs-text-opacity: 1!important;
+  color: rgba(var(--bs-white-rgb),var(--bs-text-opacity))!important;
+}
