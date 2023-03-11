@@ -1,0 +1,17 @@
+{
+    "name": "shebo/guzzle",
+    "description": "lab work",
+    "license": "MIT",
+    "require": {
+        "guzzlehttp/guzzle": "*"
+
+    }, "autoload": {
+        "files": [
+            "./serverSide/config.php", 
+            "./serverSide/functions.php"
+        ],
+        "classmap": [
+            "Model"
+        ]
+    }
+}
