@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+  display: flex;
+  padding: 0 35px;
+  align-items: center;
+  justify-content: center;
+  background: #F0F0F0;
+}

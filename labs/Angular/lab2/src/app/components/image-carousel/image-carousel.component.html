@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="wrapper">
+    <i (click)="left()" class="fa-solid fa-angle-left fa-lg"></i>
+    <div class="carousel">
+      <img src='{{"assets/images/img-"+ prev +".png"}}' alt="img1">
+      <img src='{{"assets/images/img-"+ num +".png"}}' alt="img2">
+      <img src='{{"assets/images/img-"+ next +".png"}}' alt="img3">
+    </div>
+    <i (click)="right()" class="fa-solid fa-angle-right fa-lg"></i>
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-4 offset-4 row">
+    <button (click)="loopImg()" class="btn btn-light offset-1 col-5 mt-3 me-2">Start</button>
+    <button (click)="clearImg()" class="btn btn-light col-5 mt-3">Stop</button>
+  </div>
+</div>
+

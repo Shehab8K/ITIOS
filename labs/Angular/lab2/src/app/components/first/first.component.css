@@ -1,0 +1,33 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  width: 35em;
+  margin-top: calc(100%/20);
+}
+.reset{
+  width: 8em;
+  background-color: #F0F0F0;
+  color: black;
+  align-self: center;
+  margin-bottom: calc(100%/30);
+
+}
+input{
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+}
+input:focus{
+  outline: none;
+}
+p:empty{
+  border: none;
+}
+p{
+  align-self: center;
+  margin-top: 1em;
+  width: 20em;
+  text-align: center;
+  border: 1px dotted black;
+  word-wrap: break-word;
+}
