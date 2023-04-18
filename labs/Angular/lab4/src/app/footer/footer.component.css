@@ -1,0 +1,17 @@
+footer{
+  background-color: #1c2331;
+}
+footer hr{
+  width: 60px;
+  background-color: #7c4dff;
+  height: 2px;
+}
+.Copyright{
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.install-img img{
+  margin-top: -2.5em;
+  width: 8em;
+  height: 6em;
+  object-fit: contain;
+}

@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <div class="row">
+    <table class="col-6 offset-3 w-50 mt-5 table table-striped text-center table-bordered">
+      <thead>
+          <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Age</th>
+              <th>View</th>
+          </tr>
+      </thead>
+      <tbody>
+            <tr *ngFor="let user of DataFromregister; index as i">
+                <td>{{i+1}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.age}}</td>
+                <td><a href="/studentDetails/{{i}}"><i class="fa-solid fa-eye fa-lg text-dark"></i></a></td>
+            </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
