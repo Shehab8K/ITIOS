@@ -1,0 +1,18 @@
+<div class="form-container" id="makeMaxWidth">
+  <div class="text-danger mb-2" *ngIf="username && username.length < 3">
+    Username must be at least 3 characters long.
+  </div>
+
+  <div class="text-danger mb-2" *ngIf="userAge && (+userAge < 20 || +userAge > 40)">
+    Age must be between 20 and 40.
+  </div>
+  <input type="text" name="username" class="form-control" placeholder="Name" [(ngModel)]="username" #usernameInput="ngModel"  [ngClass]="{'red':username && username.length < 3, 'green':username && username.length >= 3}"/>
+
+  <input type="text" name="userAge" class="form-control mt-3" placeholder="Age" [(ngModel)]="userAge"  #ageInput="ngModel" [ngClass]="{'red':userAge && (+userAge < 20 || +userAge > 40), 'green':userAge && (+userAge > 20 && +userAge < 40)}"/>
+
+    <p class="btn btn-success mt-3 " (click)="add()">ADD</p>
+</div>
+
+
+
+
