@@ -1,0 +1,48 @@
+.wrapper{
+    display: flex;
+    max-width: 1200px;
+    position: relative;
+  }
+  .wrapper i{
+    top: 47%;
+    height: 44px;
+    width: 44px;
+    color: #3C486B;
+    cursor: pointer;
+    position: absolute;
+    text-align: center;
+    line-height: 44px;
+    background: white;
+    border-radius: 50%;
+  }
+  
+  i:hover{
+    background: lightgray !important;
+  }
+  i:first-child{
+    left: -22px;
+  }
+  i:last-child{
+    right: -22px;
+  }
+  .carousel{
+    margin-top: 2em;
+    position: relative;
+    z-index: -1;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 3300px;
+  }
+  img{
+    height: 340px;
+    object-fit: cover;
+    margin-left: 14px;
+    width: calc(100% / 3);
+  }
+  img:first-child{
+    margin-left: 0px;
+  }
+  
+  .btn-light{
+    background-color: lightgrey !important;
+  }
