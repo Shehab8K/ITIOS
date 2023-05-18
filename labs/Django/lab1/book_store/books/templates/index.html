@@ -1,0 +1,52 @@
+{% extends 'main/layout.html' %}
+
+
+{% block title %}
+    book list
+{% endblock %}
+
+{% block main-content%}
+
+
+<h1 class="text-center mt-3"> Welcome to bookstore </h1>
+
+<h3 class="text-center my-4">book list</h3>
+
+<div class="row">
+<table class="table col-8 offset-1">
+    <thead>
+        <tr>
+            <td> ID </td>
+            <td> Name </td>
+            <td> Author </td>
+            <td> Price </td>
+            <td> Description </td>
+            <td> Actions </td>
+
+
+        </tr>   
+    </thead>
+    <tbody>
+        {% for book in book_list %}
+        <tr {% if book.price > 200 %} style="color:red" {% else %} style="color:green" {% endif %} >
+            <td>{{ book.id }} </td>
+            <td>{{ book.name }} </td>
+            <td> {{ book.author }}</td>
+            <td> {{ book.price }} </td>
+            <td> {{ book.description | truncatewords:3 | title }} </td>
+            <td> 
+                <a class="btn btn-success" href="{% url 'books:books-show' book.id %}">show</a>
+                <a class="btn btn-dark" href="{% url 'books:books-update' book.id %}">update</a>
+                <a class="btn btn-danger" href="{% url 'books:books-delete' book.id %}">delete</a>
+
+            </td>
+
+
+        </tr>
+        {% endfor %}
+
+    </tbody>
+
+</table>
+</div>
+{% endblock %}
