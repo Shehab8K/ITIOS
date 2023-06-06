@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Signup</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+        crossorigin="anonymous">
+
+    <style>
+        body,
+        html {
+            height: 100%;
+        }
+
+        .container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .user_card {
+            width: 100vh;
+            background: #f7f7f7;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+		input{
+			width: 100%;
+
+		}
+        #form-title {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: 500;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .form-control {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 8px 12px;
+        }
+
+
+
+        .error-message {
+            color: red;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body class="bg-dark">
+    <div class="container">
+        <div class="user_card ">
+            <h3 id="form-title">REGISTER ACCOUNT</h3>
+            <form method="POST" action="" >
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    {{ signup_form.username }}
+                    <small class="error-message">{{ signup_form.username.errors }}</small>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    {{ signup_form.email }}
+                    <small class="error-message">{{ signup_form.email.errors }}</small>
+                </div>
+                <div class="form-group">
+                    <label for="first_name">First Name</label>
+                    {{ signup_form.first_name }}
+                    <small class="error-message">{{ signup_form.first_name.errors }}</small>
+                </div>
+                <div class="form-group">
+                    <label for="last_name">Last Name</label>
+                    {{ signup_form.last_name }}
+                    <small class="error-message">{{ signup_form.last_name.errors }}</small>
+                </div>
+                <div class="form-group">
+                    <label for="password1">Password</label>
+                    {{ signup_form.password1 }}
+                    <small class="error-message">{{ signup_form.password1.errors }}</small>
+                </div>
+                <div class="form-group">
+                    <label for="password2">Confirm Password</label>
+                    {{ signup_form.password2 }}
+                    <small class="error-message">{{ signup_form.password2.errors }}</small>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary w-100" type="submit">Register Account</button>
+                </div>
+            </form>
+            {{ signup_form.errors }}
+            <div class="mt-4">
+                <div class="text-center">
+                    Already have an account? <a href="{% url 'login' %}" class="ml-2">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

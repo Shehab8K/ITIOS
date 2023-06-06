@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>{% block title %} Books Index {% endblock %}</title>
+    {% load static %}
+   <link href="{% static '/main/assets/css/bootstrap.min.css' %}" rel="stylesheet">
+
+   
+  </head>
+  <body>
+    {% include 'main/header.html' %}
+    <div class="container">
+      {% block main-content %}
+      <li>You will override block body</li>
+      {% endblock %}
+    </div>
+
+    {% include 'main/footer.html' %}
+  </body>
+</html>

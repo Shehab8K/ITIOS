@@ -1,0 +1,63 @@
+{% extends 'main/base_layout.html' %} 
+{# override block title #} 
+{% block title%}
+ book list
+  {% endblock %} 
+  {# override body #}
+   {% block main-content %}
+<a class="btn btn-primary" href="{% url 'book:book-add' %}"> Add New Book</a>
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <td>ISBN</td>
+      <td>title</td>
+      <td>description</td>
+      <td>author</td>
+      <td>likes</td>
+      <td>Rates</td>
+
+      <td>price</td>
+      <td>Actions</td>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for book in books%}
+    <tr>
+      <td>{{ book.id }}</td>
+      <td>{{ book.title }}</td>
+      <td>{{ book.description | truncatewords:2 | title }}</td>
+      <td>{{ book.author }}</td>
+      <td>{{ book.likes }}</td>
+      <td>{{ book.rate }}</td>
+
+      <td>{{ book.price }}</td>
+      
+
+
+      <td>
+
+      <a class="btn btn-info" href="{% url 'book:book-detail' book.id %}">
+          View</a
+        > 
+
+      <a class="btn btn-success" href="{% url 'book:book-update' book.id %}">
+          Edit</a
+        > 
+
+        <a class="btn btn-danger" href="{% url 'book:book-delete' book.id %}">
+          Delete</a
+        > 
+
+      </td>
+    </tr>
+
+    {% empty %}
+    <tr>
+      <td colspan="5" class="text-center">sorry, not book in list</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
