@@ -1,0 +1,25 @@
+  <div class="container-fluid">
+    <div class="row">
+      <table class="col-6 offset-3 w-50 mt-5 table table-striped text-center table-bordered">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Nationality</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let s of Students">
+            <td>{{s.name}}</td>
+            <td>{{s.age}}</td>
+            <td>{{s.email}}</td>
+           <td>{{s.phone}}</td>
+            <td>{{s.nationality}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

@@ -1,0 +1,5 @@
+id:customername:date
+1:zizo:2020-01-01
+2:omar:2020-02-02
+3:koko:2022-08-03
+4:hambola:2022-08-04

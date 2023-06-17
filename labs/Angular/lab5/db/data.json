@@ -1,0 +1,108 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Shehab",
+      "age": 15,
+      "email": "Shehab@gmail.com",
+      "phone": "01111111",
+      "nationality": "Egyptian"
+    },
+    {
+      "id": 2,
+      "name": "hossam",
+      "age": 14,
+      "email": "hossam@gmail.com",
+      "phone": "022222",
+      "nationality": "Egyptian"
+    },
+    {
+      "id": 3,
+      "name": "Sara",
+      "age": 14,
+      "email": "sara@gmail.com",
+      "phone": "033333333",
+      "nationality": "Egyptian"
+    },
+    {
+      "id": 4,
+      "name": "koko",
+      "age": 14,
+      "email": "koko@gmail.com",
+      "phone": "0444444",
+      "nationality": "Egyptian"
+    },
+    {
+      "id": 5,
+      "name": "sameh",
+      "age": 14,
+      "email": "sameh@gmail.com",
+      "phone": "0888888888",
+      "nationality": "Egyptian"
+    },
+    {
+      "id": 6,
+      "name": "test",
+      "age": "23",
+      "email": "test@gmail.com",
+      "phone": "11111",
+      "nationality": "Egyptian"
+    },
+    {
+      "id": 7,
+      "name": "ramy",
+      "age": "23",
+      "email": "ramy@gmail.com",
+      "phone": "11111",
+      "nationality": "Egyptian"
+    },
+    {
+      "id": 8,
+      "name": "zizooo",
+      "age": "11",
+      "email": "zizooo@gmail.com",
+      "phone": "222",
+      "nationality": "Egyptian"
+    },
+    {
+      "id": 9,
+      "name": "malak",
+      "age": "12",
+      "email": "malak@gmail.com",
+      "phone": "11111111",
+      "nationality": "Egyptian"
+    },
+    {
+      "id": 10,
+      "name": "tamer",
+      "age": "11",
+      "email": "tamer@gmal.com",
+      "phone": "11111111",
+      "nationality": "Egyptian"
+    },
+    {
+      "id": 11,
+      "name": "basma",
+      "age": "11",
+      "email": "basma@gmal.com",
+      "phone": "11111111",
+      "nationality": "Egyptian"
+    },
+    {
+      "id": 12,
+      "name": "tamer",
+      "age": "11",
+      "email": "tamer@gmal.com",
+      "phone": "11111111",
+      "nationality": "Egyptian"
+    },
+    {
+      "name": "habalola",
+      "age": "22",
+      "email": "habalola@gmail.com",
+      "phone": "222222222",
+      "nationality": "Wakanda",
+      "id": 13
+    }
+  ]
+}
